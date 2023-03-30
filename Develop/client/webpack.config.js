@@ -18,7 +18,6 @@ module.exports = () => {
       path: path.resolve(__dirname, 'dist'),
     },
     plugins: [
-      plugins: [
         new HtmlWebpackPlugin({
           template: './index.html',
           title: 'J.A.T.E',
@@ -28,6 +27,21 @@ module.exports = () => {
         swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
+        fingerprints: false,
+        inject: true,
+        name: "Just Another Text Editor",
+        description: "Takes down notes using JavaScript syntax highlighting",
+        background_colour: "#ff6500",
+        theme_colour: "#ff6500",
+        start_url: "/",
+        publicPath:"/",
+        icons: [
+          {
+            src: path.resolve("src/images/logo.png"),
+            sizes: [96,128,192,256,384,512],
+            destination: path.join("assets", "icons"),
+        },
+      ],
 
       })
     ],
