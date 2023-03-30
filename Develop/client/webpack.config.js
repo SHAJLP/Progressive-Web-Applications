@@ -30,9 +30,10 @@ module.exports = () => {
         fingerprints: false,
         inject: true,
         name: "Just Another Text Editor",
-        description: "Takes down notes using JavaScript syntax highlighting",
-        background_colour: "#ff6500",
-        theme_colour: "#ff6500",
+        short_name: "JATE",
+        description: "Text Editor capable of working offline using IndexedDB",
+        background_colour: "#225ca3",
+        theme_colour: "225ca3",
         start_url: "/",
         publicPath:"/",
         icons: [
@@ -43,7 +44,7 @@ module.exports = () => {
         },
       ],
 
-      })
+      }),
     ],
 
     module: {
@@ -53,12 +54,12 @@ module.exports = () => {
           use: [MiniCssExtractPlugin.loader, 'css-loader'],
         },
         {
-          test: /\.(png|svg|jpg|jpeg|gif)$/i,
-          type: 'asset/resource',
+         // test: /\.(png|svg|jpg|jpeg|gif)$/i,
+         // type: 'asset/resource',
         },
         {
           test: /\.m?js$/,
-          exclude: /(node_modules|bower_components)/,
+          exclude: /node_modules/,
           use: {
             loader: 'babel-loader',
             options: {
