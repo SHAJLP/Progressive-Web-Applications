@@ -20,7 +20,7 @@ const tx = jateDb.transaction("jate","readwrite");
 const store = tx.objectStore("jate");
 const request = store.put({ id: 1, value: content});
 const result = await request;
-console.log ("Data saved to the database", result.value);
+console.log ("Data saved to the database", result);
 };
 
 
@@ -34,9 +34,8 @@ const store = tx.objectStore("jate");
 const request = store.getAll(1);
 const result = await request;
 result 
-? console.log ("Data retrieved from the database", result.value)
-: console.log("Data not found in the database");
-
+ console.log ("Data retrieved from the database", result);
+//: console.log("Data not found in the database");
 return result?.value;
 };
 

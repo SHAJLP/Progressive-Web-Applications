@@ -25,7 +25,7 @@ module.exports = () => {
           title: 'J.A.T.E',
         }),
       new InjectManifest({
-        swSrc:".//src-sw.js",
+        swSrc:"./src-sw.js",
         swDest: "src-sw.js",
       }),
       new WebpackPwaManifest({
@@ -53,7 +53,7 @@ module.exports = () => {
       rules: [
         {
           test: /\.css$/i,
-          use: [MiniCssExtractPlugin.loader, 'css-loader'],
+          use: ['style-loader', 'css-loader'],
         },
         {
          // test: /\.(png|svg|jpg|jpeg|gif)$/i,
